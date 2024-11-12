@@ -52,4 +52,18 @@ func main() {
 	const myStringConst string = "test"
 	fmt.Println("Mi constante es: ", myStringConst)
 
+	myOtherScopeVariable := 50
+
+	{
+
+		myScopeVariable := 40 //solamente vive dentro de este scope {}
+		{
+			fmt.Println("Mi variable: ", myOtherScopeVariable)
+			fmt.Println("Mi variable: ", myScopeVariable)
+		}
+
+	}
+
+	fmt.Println("Mi variable: ", myOtherScopeVariable)
+
 }
