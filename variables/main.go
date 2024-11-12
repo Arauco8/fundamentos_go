@@ -43,4 +43,13 @@ func main() {
 	myBoolVar2 := true
 	fmt.Println("My variable is: ", myBoolVar2)
 
+	const myIntConst int = 12
+	fmt.Println("Mi constante es: ", myIntConst)
+
+	const myFirstStringConst = "a12" // la constante van a ser solo de lectura
+	fmt.Println("mi constante es: ", myFirstStringConst)
+
+	const myStringConst string = "test"
+	fmt.Println("Mi constante es: ", myStringConst)
+
 }
