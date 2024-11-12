@@ -24,4 +24,10 @@ func main() {
 
 	fmt.Println("My variable is: ", myStringVar)
 
+	var myBoolVar bool
+
+	myBoolVar = true
+
+	fmt.Println("My variable is: ", myBoolVar)
+
 }
