@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unsafe"
 )
 
 func main() {
@@ -65,5 +66,17 @@ func main() {
 	}
 
 	fmt.Println("Mi variable: ", myOtherScopeVariable)
+
+	var my8BitsUnitVar uint8 = 20
+	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my8BitsUnitVar, my8BitsUnitVar, unsafe.Sizeof(my8BitsUnitVar), unsafe.Sizeof(my8BitsUnitVar)*8)
+
+	var my16BitsUnitVar uint16 = 30
+	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my16BitsUnitVar, my16BitsUnitVar, unsafe.Sizeof(my16BitsUnitVar), unsafe.Sizeof(my16BitsUnitVar)*8)
+
+	var my32BitsUnitVar uint32 = 90
+	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my32BitsUnitVar, my32BitsUnitVar, unsafe.Sizeof(my32BitsUnitVar), unsafe.Sizeof(my32BitsUnitVar)*8)
+
+	var my64BitsUnitVar uint64 = 90
+	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my64BitsUnitVar, my64BitsUnitVar, unsafe.Sizeof(my64BitsUnitVar), unsafe.Sizeof(my64BitsUnitVar)*8)
 
 }
