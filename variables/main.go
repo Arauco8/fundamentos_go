@@ -92,4 +92,13 @@ func main() {
 	var mUinitVar uint = 90
 	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", mUinitVar, mUinitVar, unsafe.Sizeof(mUinitVar), unsafe.Sizeof(mUinitVar)*8)
 
+	var myFloat32Var float32 = 3.14
+	fmt.Printf("type: %T, value: %f, bytes: %d, bits: %d \n", myFloat32Var, myFloat32Var, unsafe.Sizeof(myFloat32Var), unsafe.Sizeof(myFloat32Var)*8)
+
+	var myFloat64Var float64 = 590.12435
+	fmt.Printf("type: %T, value: %f, bytes: %d, bits: %d \n", myFloat64Var, myFloat64Var, unsafe.Sizeof(myFloat64Var), unsafe.Sizeof(myFloat64Var)*8)
+
+	myOtherFloat := 7654.123
+	fmt.Printf("type: %T, value: %f, bytes: %d, bits: %d \n", myOtherFloat, myOtherFloat, unsafe.Sizeof(myOtherFloat), unsafe.Sizeof(myOtherFloat)*8)
+
 }
