@@ -67,6 +67,16 @@ func main() {
 
 	fmt.Println("Mi variable: ", myOtherScopeVariable)
 
+	/*
+
+		int8     8 bits  -128 to 127
+		int16    16 bits -2^15 to 2^15 -1
+		int32    32 bits -2^31 to 2^31 -1
+		int 64   64 bits -2^63 to 2^63 -1
+		int Platform dependent Platform dependent
+
+	*/
+
 	var my8BitsUnitVar uint8 = 20
 	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my8BitsUnitVar, my8BitsUnitVar, unsafe.Sizeof(my8BitsUnitVar), unsafe.Sizeof(my8BitsUnitVar)*8)
 
@@ -78,5 +88,8 @@ func main() {
 
 	var my64BitsUnitVar uint64 = 90
 	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", my64BitsUnitVar, my64BitsUnitVar, unsafe.Sizeof(my64BitsUnitVar), unsafe.Sizeof(my64BitsUnitVar)*8)
+
+	var mUinitVar uint = 90
+	fmt.Printf("type: %T, value: %d, bytes: %d, bits: %d \n", mUinitVar, mUinitVar, unsafe.Sizeof(mUinitVar), unsafe.Sizeof(mUinitVar)*8)
 
 }
