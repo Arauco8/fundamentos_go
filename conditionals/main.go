@@ -33,4 +33,35 @@ func main() {
 	} else {
 		fmt.Println("ninguna es valida")
 	}
+
+	switch number {
+	case 1:
+		fmt.Println("uno")
+	case 2:
+		fmt.Println("dos")
+	case 3:
+		fmt.Println("tres")
+	default:
+		fmt.Println("ninguna es valida")
+	}
+
+	switch number := 1; number {
+	case 1:
+		fmt.Println("uno")
+	case 2:
+		fmt.Println("dos")
+	case 3:
+		fmt.Println("tres")
+	default:
+		fmt.Println("ninguna es valida")
+	}
+
+	switch {
+	case number > 0:
+		fmt.Println("positivo")
+	case number < 0:
+		fmt.Println("negativo")
+	case number == 0:
+		fmt.Println("es cero")
+	}
 }
