@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"unsafe"
 )
 
@@ -110,5 +111,24 @@ func main() {
 	:)`
 
 	fmt.Printf("mi valor es: %s \n", myStringVar4)
+
+	{
+
+		floatVar := 33.11
+		fmt.Printf("type: %T, value: %f\n", floatVar, floatVar)
+
+		floatStrVar := fmt.Sprintf("%.4f", floatVar) //en vez de imprimir le asigna eso a la variable, y cuando usamos %f agregando .4 le damos formato
+		fmt.Printf("type: %T, value: %s\n", floatStrVar, floatStrVar)
+
+		intVar := 37
+		fmt.Printf("type: %T, value: %d\n", intVar, intVar)
+
+		intStrVar := fmt.Sprintf("%d", intVar)
+		fmt.Printf("type: %T, value: %s\n", intStrVar, intStrVar)
+
+		intVar2 := 342
+		intStrVar2 := strconv.Itoa(intVar2)
+		fmt.Printf("type: %T, value: %s\n", intStrVar2, intStrVar2)
+	}
 
 }
