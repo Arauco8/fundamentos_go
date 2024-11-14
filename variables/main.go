@@ -129,6 +129,15 @@ func main() {
 		intVar2 := 342
 		intStrVar2 := strconv.Itoa(intVar2)
 		fmt.Printf("type: %T, value: %s\n", intStrVar2, intStrVar2)
+
+		strIntVar2, err := strconv.Atoi("15")
+		fmt.Printf("type: %T, value: %d, err: %v\n", strIntVar2, strIntVar2, err)
+
+		strIntVar3, _ := strconv.ParseInt("10", 10, 64)
+		fmt.Printf("type: %T, value: %d\n", strIntVar3, strIntVar3) // agrego _ para omitir usar err
+
+		strFloatVar, err := strconv.ParseFloat("-11.2", 64)
+		fmt.Printf("type: %T, value: %f, err: %v\n", strFloatVar, strFloatVar, err)
 	}
 
 }
