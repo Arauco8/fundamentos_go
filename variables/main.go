@@ -101,4 +101,14 @@ func main() {
 	myOtherFloat := 7654.123
 	fmt.Printf("type: %T, value: %f, bytes: %d, bits: %d \n", myOtherFloat, myOtherFloat, unsafe.Sizeof(myOtherFloat), unsafe.Sizeof(myOtherFloat)*8)
 
+	var myStringVar3 string = "test"           // string son secuencias de bytes
+	fmt.Printf("mi valor %s \n", myStringVar3) //%s definir que estamos recibiendo un valor de tipo string
+
+	myStringVar4 := `Mi variable de tipo texto en Go
+	con multiples
+	lineas
+	:)`
+
+	fmt.Printf("mi valor es: %s \n", myStringVar4)
+
 }
