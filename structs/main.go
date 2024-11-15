@@ -13,6 +13,18 @@ type User struct {
 	LastName string `json:"last_name,omitempty"` // para nombrar los campos se usa etiqueta json para su representacion en formato json
 }
 
+func (u User) Display() {
+	v, err := json.Marshal(u)
+	if err != nil {
+		fmt.Println("error: ", err.Error())
+	}
+	fmt.Println("json: ", string(v))
+}
+
+func (u *User) SetName(name string) {
+	u.Name = name
+}
+
 func main() {
 
 	user := User{
@@ -25,11 +37,9 @@ func main() {
 
 	fmt.Println(user)
 
-	v, err := json.Marshal(user)
-	if err != nil {
-		fmt.Println("error: ", err.Error())
-	}
-	fmt.Println("json: ", string(v))
+	user.Display()
+	user.SetName("Mario Roberto")
+	user.Display()
 	fmt.Println()
 
 }
