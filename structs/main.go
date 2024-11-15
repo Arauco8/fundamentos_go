@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json" //permite transformar una struct en json
 	"fmt"
+	"proyectos/fundamentos_go/structs/commerce"
 )
 
 type User struct {
@@ -42,4 +43,44 @@ func main() {
 	user.Display()
 	fmt.Println()
 
+	p1 := commerce.Product{
+		Name:  "Heladera Premium",
+		Price: 200000,
+		Type: commerce.Type{
+			Code:        "A",
+			Description: "Electrodomestico",
+		},
+		Tags:  []string{"heladera", "freezer", "premium", "refrigerador"},
+		Count: 5,
+	}
+
+	p2 := commerce.Product{
+		Name:  "Naranja",
+		Price: 50,
+		Type: commerce.Type{
+			Code:        "B",
+			Description: "Alimento",
+		},
+		Tags:  []string{"alimento", "fruta"},
+		Count: 20,
+	}
+
+	p3 := commerce.Product{
+		Name:  "Cortina",
+		Price: 6000,
+		Type: commerce.Type{
+			Code:        "C",
+			Description: "Hogar",
+		},
+		Tags:  []string{"hogar", "cortina"},
+		Count: 3,
+	}
+
+	cart := commerce.NewCart(11312)
+	cart.AddProducts(p1, p2, p3)
+
+	fmt.Println("PRODUCTS CART")
+	fmt.Println("Total Products: ", len(cart.Products))
+	fmt.Printf("Total Cart: %.2f\n", cart.Total())
+	fmt.Println()
 }
