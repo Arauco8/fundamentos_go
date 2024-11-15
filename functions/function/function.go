@@ -55,7 +55,7 @@ func Split(v int) (x, y int) { //como ya tenemos nombrado los valores que va ret
 	return
 }
 
-func MSum(values ...float64) float64 { //... con esto internamente lo manejamos como un array, elipsis
+func MSum(values ...float64) float64 { //... con esto internamente lo manejamos como un array, elipsis, siempre esta al final y se usa una sola vez
 	var sum float64
 	for _, v := range values {
 		sum += v
@@ -63,4 +63,31 @@ func MSum(values ...float64) float64 { //... con esto internamente lo manejamos 
 
 	return sum
 
+}
+
+func MOperations(op Operation, values ...float64) (float64, error) {
+
+	if len(values) == 0 {
+		return 0, errors.New("There aren't values")
+	}
+	sum := values[0]
+
+	for _, v := range values[1:] {
+
+		switch op {
+		case SUM:
+			sum += v
+		case SUB:
+			sum -= v
+		case DIV:
+			if v == 0 {
+				return 0, errors.New("mustn't be zero")
+			}
+			sum /= v
+		case MUL:
+			sum *= v
+		}
+	}
+
+	return sum, nil
 }

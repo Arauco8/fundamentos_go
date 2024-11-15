@@ -30,4 +30,12 @@ func main() {
 	val2 := function.MSum(1, 2, 3, 1, 2, 3, 4)
 	fmt.Println(val2)
 
+	fmt.Println()
+	mOperVal, err := function.MOperations(function.SUM, 4, 4, 4, 4, 10, 80)
+	if err != nil {
+		fmt.Println("error: ", err.Error())
+	}
+	fmt.Println("value: ", mOperVal, " - err: ", err)
+	fmt.Println()
+
 }
