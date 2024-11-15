@@ -21,4 +21,13 @@ func main() {
 		fmt.Println("error: ", err.Error())
 	}
 	fmt.Println("value: ", value, " - err: ", err)
+	fmt.Println()
+
+	xVal, yVal := function.Split(40)
+	fmt.Println(xVal, yVal)
+	fmt.Println()
+
+	val2 := function.MSum(1, 2, 3, 1, 2, 3, 4)
+	fmt.Println(val2)
+
 }

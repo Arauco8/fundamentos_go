@@ -48,3 +48,19 @@ func Calc(op Operation, x, y float64) (float64, error) {
 
 	return 0, errors.New("has been an error")
 }
+
+func Split(v int) (x, y int) { //como ya tenemos nombrado los valores que va retornar no hace falta agregarlos en el return
+	x = v * 4 / 9
+	y = v - x
+	return
+}
+
+func MSum(values ...float64) float64 { //... con esto internamente lo manejamos como un array, elipsis
+	var sum float64
+	for _, v := range values {
+		sum += v
+	}
+
+	return sum
+
+}
