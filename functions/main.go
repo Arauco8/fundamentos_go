@@ -38,4 +38,6 @@ func main() {
 	fmt.Println("value: ", mOperVal, " - err: ", err)
 	fmt.Println()
 
+	factOpFunc := function.FactoryOperation(function.SUM)
+	fmt.Println("value: ", factOpFunc(10, 15), " - err: ", err)
 }
