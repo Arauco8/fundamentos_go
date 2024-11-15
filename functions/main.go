@@ -14,4 +14,11 @@ func main() {
 	fmt.Println(v)
 	fmt.Println()
 	function.RepeatString(10, "LA")
+
+	fmt.Println()
+	value, err := function.Calc(function.SUM, 20.12, 34)
+	if err != nil {
+		fmt.Println("error: ", err.Error())
+	}
+	fmt.Println("value: ", value, " - err: ", err)
 }
