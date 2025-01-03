@@ -30,7 +30,7 @@ type Car struct {
 	Time int
 }
 
-func (c Car) Distance() float64 {
+func (c *Car) Distance() float64 {
 	return (float64(c.Time) / 60) * 100
 }
 
@@ -38,7 +38,7 @@ type MotorCycle struct {
 	Time int
 }
 
-func (m MotorCycle) Distance() float64 {
+func (m *MotorCycle) Distance() float64 {
 	return (float64(m.Time) / 60) * 120
 }
 
@@ -46,6 +46,6 @@ type Truck struct {
 	Time int
 }
 
-func (t Truck) Distance() float64 {
+func (t *Truck) Distance() float64 {
 	return (float64(t.Time) / 60) * 70
 }
