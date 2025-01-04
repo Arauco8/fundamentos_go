@@ -1,0 +1,4 @@
+Success: 2025/01/04 02:09:08 main.go:23: Este es un mensaje de log personalizado
+Success: 2025/01/04 02:09:08 main.go:24: Este es otro mensaje de log personalizado
+Error: 2025/01/04 02:09:08 main.go:27: Este es un mensaje de log personalizado
+Error: 2025/01/04 02:09:08 main.go:28: Este es otro mensaje de log personalizado
