@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+
+	"proyectos/fundamentos_go/errors/mypackage" //importamos el paquete mypackage
 )
 
 type MyCustomError struct {
@@ -43,6 +45,24 @@ func main() {
 	fmt.Println(errors.Unwrap(err7)) //nos permite desanidar un error
 	fmt.Println(errors.Unwrap(errors.Unwrap(err7)))
 	fmt.Println(errors.Unwrap(errors.Unwrap(errors.Unwrap(err7))))
+	fmt.Println()
+
+	defer func() { //ejecuta al final del programa. Utilizamos el defer para recuperar el panic (errores)
+		fmt.Println("end main")
+		r := recover() //nos permite recuperar el panic, nos permite manejar errores que se van generando
+		if r != nil {
+			fmt.Println("recovered from panic", r)
+		}
+	}()
+
+	/*v := 0
+	_ = 5 / v*/
+
+	mypackage.Run()
+	//panic("something bad happened") //genera un panic, forzamos un error. Es importante que el defer este antes que el panic o cualquier error que pueda llegar a pasar
+
+	//fmt.Println("end of main")
+
 }
 
 func TestError(v int) error {
