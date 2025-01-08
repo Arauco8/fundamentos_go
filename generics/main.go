@@ -11,6 +11,9 @@ func main() {
 	fmt.Println()
 	fmt.Println(sum02(v1))
 	fmt.Println(sum02(v2))
+	fmt.Println()
+	anyType(1, 1)
+	anyType("1", "3")
 }
 
 func sum01[N int | int32 | int64 | float32 | float64](v []N) N {
@@ -31,4 +34,8 @@ func sum02[N Number](v []N) N {
 		sum += val
 	}
 	return sum
+}
+
+func anyType[T any](v, v2 T) {
+	fmt.Println(v, v2)
 }
