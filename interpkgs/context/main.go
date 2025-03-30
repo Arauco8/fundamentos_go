@@ -22,7 +22,7 @@ func main() {
 	// Simulate some work in the main goroutine
 
 	select {
-	case <-ctx2.Done(): // Wait for the context to be done
+	case <-ctx2.Done(): // Wait for the context to be done, like the channel
 		fmt.Println("Context done:", ctx2.Err())
 		/*case <-time.After(3 * time.Second): // Simulate some work
 			fmt.Println("Work done before timeout")
